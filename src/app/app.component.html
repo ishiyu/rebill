@@ -1,0 +1,14 @@
+<h1>
+  {{title}}
+</h1>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    <input type="text" #updateValue [value]="item.value">
+    <button (click)="updateItem(item.$key, updateValue)">Update</button>
+    <button (click)="removeItem(item.$key)">Remove</button>
+  </li>
+</ul>
+
+<input type="text" #newItem>
+<button (click)="addItem(newItem.value)">Add</button>
+<button (click)="removeAllItems()">Add</button>
